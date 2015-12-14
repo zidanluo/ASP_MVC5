@@ -1,0 +1,30 @@
+﻿@using System.Collections.Concurrent
+@model PersonalWebApp.Models.LogOnModel
+@{
+    ViewBag.Title = "Log On";
+}
+<h1 class="page-header">Log On Page</h1>
+
+@using (Html.BeginForm("LogOn", "Home", FormMethod.Post, new { @class = "form-group" }))
+{
+    @Html.ValidationSummary(false, "Log In Falied")
+    
+    <fieldset>
+        <div class="input-group">
+            @Html.LabelFor(x => x.Username)
+            @Html.TextBoxFor(x => x.Username)
+            @Html.ValidationMessageFor(x => x.Username)
+        </div>
+        <div class="input-group">
+            @Html.LabelFor(x => x.Password)
+            @Html.TextBoxFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        @Html.HiddenFor(x => x.ReturnUrl)
+        
+        <div class="input-group-btn">
+            <button type="submit" class="btn">Log In</button>
+        </div>
+    </fieldset>
+}
+

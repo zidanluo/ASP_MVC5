@@ -10,7 +10,7 @@ using log4net.Config;
 
 namespace PersonalWebApp
 {
-    public class MvcApplication : Spring.Web.Mvc.SpringMvcApplication//System.Web.HttpApplication
+    public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
