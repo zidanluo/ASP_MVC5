@@ -4,28 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bundled.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<body class="@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() @HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">*@
+    <div class="main">
+        <div class="header">
+        @*<div class="container">*@
+            <div class="navigation pure-menu pure-menu-open pure-menu-horizontal">
+            @*<div class="navbar-header">*@
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+                </button>*@
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "pure-menu-heading" })
+
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li><a herf="@Url.Action("LogOff", "Home")">Log Off</a></li>
+                        <li><a class="navbar-link" href=@Url.Action("LogOff", "Home")>Log Off</a></li>
                     }
                     else
                     {
@@ -34,13 +36,13 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        @*<footer>
+        <div class="content">
+            @RenderBody()
+            @*<hr />*@
+            @*<footer>
                 <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
             </footer>*@
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

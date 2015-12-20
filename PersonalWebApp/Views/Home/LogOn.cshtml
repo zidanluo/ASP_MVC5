@@ -3,27 +3,27 @@
 @{
     ViewBag.Title = "Log On";
 }
-<h1 class="page-header">Log On Page</h1>
+<h1>Log On Page</h1>
 
-@using (Html.BeginForm("LogOn", "Home", FormMethod.Post, new { @class = "form-group" }))
+@using (Html.BeginForm("LogOn", "Home", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
 {
     @Html.ValidationSummary(false, "Log In Falied")
     
     <fieldset>
-        <div class="input-group">
+        <div class="pure-control-group">
             @Html.LabelFor(x => x.Username)
             @Html.TextBoxFor(x => x.Username)
             @Html.ValidationMessageFor(x => x.Username)
         </div>
-        <div class="input-group">
+        <div class="pure-control-group">
             @Html.LabelFor(x => x.Password)
             @Html.TextBoxFor(x => x.Password)
             @Html.ValidationMessageFor(x => x.Password)
         </div>
         @Html.HiddenFor(x => x.ReturnUrl)
         
-        <div class="input-group-btn">
-            <button type="submit" class="btn">Log In</button>
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-sign-in"></i>Log In</button>
         </div>
     </fieldset>
 }

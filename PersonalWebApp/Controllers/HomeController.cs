@@ -1,7 +1,9 @@
 ﻿using AopAlliance.Intercept;
 using log4net;
+using Microsoft.Practices.Unity;
 using PersonalWebApp.Data;
 using PersonalWebApp.Models;
+using PersonalWebApp.Security;
 using Spring.Aop;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,6 @@ using System.Data.Entity.Infrastructure;
 using System.Data.SQLite;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,7 +20,11 @@ namespace PersonalWebApp.Controllers
     {
         private ILog log = LogManager.GetLogger(typeof(HomeController));
 
-        //public ICommand Cmd { get; set; }
+        [Dependency]
+        public IMembershipService MemberService { get; set; }
+
+        [Dependency]
+        public IAuthenticationProvider AuthenticationProvider { get; set; }
         public ActionResult Index()
         {
             //Spring.Aop.Support.AttributeMatchMethodPointcutAdvisor s;
@@ -39,6 +44,12 @@ namespace PersonalWebApp.Controllers
             return View();
         }
 
+        public ActionResult LogOff()
+        {
+            AuthenticationProvider.SignOut();
+            return RedirectToAction("LogOn", "Home");
+        }
+
         public ActionResult LogOn(string returnUrl)
         {
             return View(new LogOnModel { ReturnUrl = returnUrl });
@@ -49,29 +60,16 @@ namespace PersonalWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (WebAppDbContext ctx = new WebAppDbContext())
+                ValidateResult result = MemberService.ValidateUser(model.Username, model.Password);
+                switch (result)
                 {
-                    try
-                    {
-                        //SQLiteConnection a = new SQLiteConnection(@"data source=|DataDirectory|WebApp.db");
-                        //a.Open();
-                        //a.ChangePassword("123");
-                        //log.Info(a.State);
-                        //a.Close();
-                        ctx.Database.Log = log.Info;
-                        var u = ctx.Users.Where(x => x.UserId == model.Username);
-                        if (u.Count() > 0)
-                            model.Password = u.FirstOrDefault().Email;
-                        else
-                            ModelState.AddModelError("", "No Record Found");
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error(ex.Message, ex);
-                        ModelState.AddModelError("", ex.Message);
-                    }
+                    case ValidateResult.Success:
+                        AuthenticationProvider.SignIn(model.Username, model.ReturnUrl);
+                        return new EmptyResult();
+                    case ValidateResult.Failure:
+                        ModelState.AddModelError("", "Login failed, username or password is wrong");
+                        break;
                 }
-                //ModelState.AddModelError("", "xxx");
             }
             return View(model);
         }

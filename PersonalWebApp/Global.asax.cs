@@ -7,6 +7,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using log4net.Config;
+using Microsoft.Practices.Unity;
+using PersonalWebApp.Security;
+using Spring.Web.Providers;
 
 namespace PersonalWebApp
 {
@@ -19,7 +22,20 @@ namespace PersonalWebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
             XmlConfigurator.Configure();
+            RegisgerDependencyResolver();
+        }
+
+        private static void RegisgerDependencyResolver()
+        {
+            var container = new UnityContainer().AddExtension(new UnityDecoratorContainerExtension());
+
+            container.RegisterType<IMembershipService, EFMembershipService>();
+            container.RegisterType<IAuthenticationProvider, CookieAuthenticationProvider>();
+            container.RegisterType<IRoleProvider, EFRoleProvider>();
+
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
 }

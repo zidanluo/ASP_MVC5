@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using PersonalWebApp.Helpers;
 
 namespace PersonalWebApp
 {
@@ -23,9 +24,16 @@ namespace PersonalWebApp
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //          "~/Content/bootstrap.css",
+            //          "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bundled.css")
+                   //.Include("~/Content/bootstrap.css")
+                   .Include("~/Content/components/pure/pure-min.css", new CssRewriteUrlTransformWrapper())
+                   .Include("~/Content/components/font-awesome/css/font-awesome.min.css", new CssRewriteUrlTransformWrapper())
+                   .Include("~/Content/components/highlight/src/styles/github.css")
+                   .Include("~/Content/fonts.css", "~/Content/site.css"));
         }
     }
 }
