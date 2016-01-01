@@ -23,6 +23,8 @@ namespace PersonalWebApp.Data
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
+        public virtual DbSet<AccessCode> AccessCodes { get; set; }        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

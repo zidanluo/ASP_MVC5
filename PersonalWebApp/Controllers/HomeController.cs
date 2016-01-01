@@ -24,6 +24,9 @@ namespace PersonalWebApp.Controllers
         public IMembershipService MemberService { get; set; }
 
         [Dependency]
+        public ISecurityValidator SecurityValidator { get; set; }
+
+        [Dependency]
         public IAuthenticationProvider AuthenticationProvider { get; set; }
         public ActionResult Index()
         {
@@ -40,8 +43,26 @@ namespace PersonalWebApp.Controllers
 
         public ActionResult Contact()
         {
-            //"Your contact page.";
             return View();
+        }
+
+        public ActionResult Resume()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ViewResume(ResumeModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (SecurityValidator.Validate(model.AccessCode))
+                    return View();
+                else
+                    ModelState.AddModelError("", "Access code is wrong");
+            }
+            return View("Resume", model);
+
         }
 
         public ActionResult LogOff()

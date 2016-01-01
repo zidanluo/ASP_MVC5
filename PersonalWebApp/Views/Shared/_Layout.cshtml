@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
                         <li><a class="navbar-link" href=@Url.Action("LogOff", "Home")>Log Off</a></li>

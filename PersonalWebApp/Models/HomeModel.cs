@@ -17,4 +17,10 @@ namespace PersonalWebApp.Models
         public bool RememberMe { get; set; }
         public string ReturnUrl { get; set; }
     }
+
+    public class ResumeModel
+    {
+        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Validation_Required")]
+        public string AccessCode { get; set; }
+    }
 }

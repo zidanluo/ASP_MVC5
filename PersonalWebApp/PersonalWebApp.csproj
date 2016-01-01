@@ -189,8 +189,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\CustomAuthorizeAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\User.cs" />
-    <Compile Include="Data\WebAppDbContext.cs" />
+    <Compile Include="Helpers\Data\AccessCode.cs" />
+    <Compile Include="Helpers\Data\User.cs" />
+    <Compile Include="Helpers\Data\WebAppDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,6 +210,8 @@
     <Compile Include="Security\EFRoleProvider.cs" />
     <Compile Include="Security\IAuthenticationProvider.cs" />
     <Compile Include="Security\IMembershipService.cs" />
+    <Compile Include="Security\ISecurityValidator.cs" />
+    <Compile Include="Security\ValidPeriodValidator.cs" />
     <Compile Include="Security\ValidateResult.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UnityDecoratorBuildStrategy.cs" />
@@ -391,6 +394,7 @@
     <Content Include="Content\fonts\opensans-bold.svg" />
     <Content Include="Content\fonts\opensans-light.svg" />
     <Content Include="Content\fonts\opensans-regular.svg" />
+    <Content Include="Content\images\face.jpg" />
     <Content Include="Content\images\git-logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
@@ -502,11 +506,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\LogOn.cshtml" />
+    <Content Include="Views\Home\Resume.cshtml" />
+    <Content Include="Views\Home\ViewResume.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Account\" />
-    <Folder Include="Data\Config\" />
+    <Folder Include="Helpers\Data\Config\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

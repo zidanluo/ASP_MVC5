@@ -55,7 +55,7 @@ namespace PersonalWebApp.Attributes
 
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            if ("Home" == filterContext.ActionDescriptor.ControllerDescriptor.ControllerName && "LogOn" == filterContext.ActionDescriptor.ActionName)
+            if ("Home" == filterContext.ActionDescriptor.ControllerDescriptor.ControllerName)
                 return;
             base.OnAuthorization(filterContext);
         }

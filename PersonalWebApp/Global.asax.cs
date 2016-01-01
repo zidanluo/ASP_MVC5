@@ -34,6 +34,7 @@ namespace PersonalWebApp
             container.RegisterType<IMembershipService, EFMembershipService>();
             container.RegisterType<IAuthenticationProvider, CookieAuthenticationProvider>();
             container.RegisterType<IRoleProvider, EFRoleProvider>();
+            container.RegisterType<ISecurityValidator, ValidPeriodValidator>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
