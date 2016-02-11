@@ -20,6 +20,7 @@ namespace PersonalWebApp.Models
 
     public class ResumeModel
     {
+        [Display(Name="访问码")]
         [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "Validation_Required")]
         public string AccessCode { get; set; }
     }

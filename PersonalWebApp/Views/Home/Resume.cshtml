@@ -2,21 +2,34 @@
 @{
     ViewBag.Title = "Resume";
 }
-<h1>Resume</h1>
 
-@using (Html.BeginForm("ViewResume", "Home", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+@using (Html.BeginForm("ViewResume", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.ValidationSummary(false, "Access Denined")
+    <h2>个人简历</h2>
+    <hr />
+    @Html.ValidationSummary(false, "访问拒绝")
 
-    <fieldset>
-        <div class="pure-control-group">
-            @Html.LabelFor(x => x.AccessCode)
-            @Html.TextBoxFor(x => x.AccessCode)
-            @Html.ValidationMessageFor(x => x.AccessCode)
-        </div>
+    <div class="form-horizontal">
 
-        <div class="pure-controls">
-            <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-sign-in"></i>View</button>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AccessCode, new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.TextBoxFor(m => m.AccessCode, new { @class = "form-control col-md-2" })
+                @Html.ValidationMessageFor(model => model.AccessCode, "", new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-success">查看</button>
         </div>
-    </fieldset>
+    </div>
+
+    @*<fieldset >
+            <div class="pure-control-group">
+                @Html.LabelFor(x => x.AccessCode)
+                @Html.TextBoxFor(x => x.AccessCode)
+                @Html.ValidationMessageFor(x => x.AccessCode)
+            </div>
+
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-sign-in"></i>View</button>
+            </div>
+        </fieldset>*@
 }

@@ -59,7 +59,7 @@ namespace PersonalWebApp.Controllers
                 if (SecurityValidator.Validate(model.AccessCode))
                     return View();
                 else
-                    ModelState.AddModelError("", "Access code is wrong");
+                    ModelState.AddModelError("", "访问码错误");
             }
             return View("Resume", model);
 

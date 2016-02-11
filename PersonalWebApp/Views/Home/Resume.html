@@ -1,11 +1,13 @@
 ﻿<style>
+    bold {
+        font-weight: bold;
+    }
+
     div.resume {
         margin-left: auto;
         margin-right: auto;
         width: 800px;
         position: relative;
-        /*font-family: Verdana;
-        font-size: 16px;*/
     }
 
     div.resume-block {
@@ -36,11 +38,9 @@
         margin-left: 50px;
     }
 
-    div.icon {
+    img.icon {
         height: 150px;
         width: 150px;
-        background-image: url("/Content/images/face.jpg");
-        background-repeat: no-repeat;
     }
 
     ul.resume {
@@ -60,7 +60,7 @@
     }
 
     div.resume-header {
-        height: 150px;
+        height: 152px;
     }
 
     table.resume-basic-info {
@@ -108,7 +108,6 @@
             height: 25px;
         }
 
-
             ul.resume-score li div {
                 vertical-align: central;
                 background-color: #6db33f;
@@ -119,12 +118,36 @@
                 border-left: 1px #ccc solid;
                 border-right: 1px #ccc solid;
                 border-top: 1px #aaa solid;
-                
             }
+
+    #resume_print {
+        border-top: none;
+        border-right:none;
+        border-bottom-right-radius:0px;
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+        border-bottom-left-radius:4px;
+    }
+
+    @media print {
+        ul.resume-score li div {
+            background-color: #6db33f !important;
+            border-radius: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-top: 0px;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .noprint {
+            display: none;
+        }
+    }
 </style>
+
 <div class="resume">
     <div class="resume-header resume-block">
-        <div class="icon"></div>
+        <div><img src="/Content/images/face.jpg" /></div>
         <div>
             <ul class="resume">
                 <li>
@@ -134,6 +157,13 @@
                 <li><span class="font-header">邮箱: luozong3@sina.com</span></li>
                 <li><span class="font-header">职位: 高级软件工程师(Java)</span></li>
             </ul>
+        </div>
+        
+        <div style="float:right">
+            <span id="resume_print" class="btn btn-default noprint" onclick="javascript:window.print();">            
+                <span class="glyphicon glyphicon-print "></span>
+                打印简历
+            </span>
         </div>
     </div>
 
@@ -179,28 +209,29 @@
                     </tr>
                     <tr>
                         <td style="vertical-align: top;">工作内容:</td>
-                        <td>新加坡:<br />
+                        <td>
+                            新加坡:<br />
                             1.与客户沟通了解新的需求,翻译成程序设计需要的需求文档;
-                        <br />
+                            <br />
                             &nbsp;&nbsp;&nbsp;对于客户反应的各种bug和问题,追查其root cause并找出最优解决方案.
-                        <br />
+                            <br />
                             2.发现旧有系统的设计上的不足,学习并运用新技术对其进行改进调优.
-                        <br />
+                            <br />
                             &nbsp;&nbsp;&nbsp;对项目的流程和管理提出意见并加以改进.
-                        <br />
+                            <br />
                             3.系统日常维护,bug分析,解决各种生产环境下产生的问题.
-                        <br />
+                            <br />
                             4.新系统开发时,设计并优化系统基础框架.
-                        <br />
+                            <br />
                             5.各种系统疑难杂症分析与解决.
-                        <br />
+                            <br />
                             6.负责指导初级工程师的开发.<br />
                             <br />
                             成都:<br />
                             1.系统新功能开发,解决已知系统bug
-                        <br />
+                            <br />
                             2.支持并解决系统疑难杂症
-                        <br />
+                            <br />
                             3.指导初级工程师的开发.<br />
                         </td>
                     </tr>
@@ -222,8 +253,9 @@
                     </tr>
                     <tr>
                         <td style="vertical-align: top;">工作内容:</td>
-                        <td>1. 与客户沟通并了解需求
-                        <br />
+                        <td>
+                            1. 与客户沟通并了解需求
+                            <br />
                             2. 根据客户需求进行系统开发,对客户反应的bug进行及时的修复<br />
                         </td>
                     </tr>
@@ -244,7 +276,8 @@
                     </tr>
                     <tr>
                         <td style="vertical-align: top;">工作内容:</td>
-                        <td>1.负责显示器维修(芯片级), 电脑硬件维修(板卡级)<br />
+                        <td>
+                            1.负责显示器维修(芯片级), 电脑硬件维修(板卡级)<br />
                         </td>
                     </tr>
                 </table>
@@ -264,7 +297,8 @@
                     </tr>
                     <tr>
                         <td style="vertical-align: top;">工作内容:</td>
-                        <td>1. 负责显示器维修(芯片级)<br />
+                        <td>
+                            1. 负责显示器维修(芯片级)<br />
                         </td>
                     </tr>
                 </table>
@@ -291,7 +325,8 @@
                     </tr>
                     <tr>
                         <td>工作内容:</td>
-                        <td>1.项目新需求的开发
+                        <td>
+                            1.项目新需求的开发
                             <br />
                             2.项目维护，bug修复
                             <br />
@@ -321,7 +356,8 @@
                     </tr>
                     <tr>
                         <td>工作内容:</td>
-                        <td>1.项目日常维护, bug修复
+                        <td>
+                            1.项目日常维护, bug修复
                             <br />
                         </td>
                     </tr>
@@ -344,7 +380,8 @@
                     </tr>
                     <tr>
                         <td>工作内容:</td>
-                        <td>1.与客户沟通并了解需求.
+                        <td>
+                            1.与客户沟通并了解需求.
                             <br />
                             2.与其他付款平台供应商讨论并设计接口.
                             <br />
@@ -375,7 +412,8 @@
                     </tr>
                     <tr>
                         <td>工作内容:</td>
-                        <td>1.项目新需求的开发
+                        <td>
+                            1.项目新需求的开发
                             <br />
                             2.项目维护，bug修复
                             <br />
@@ -406,7 +444,8 @@
                     </tr>
                     <tr>
                         <td>工作内容:</td>
-                        <td>1.系统中部分功能的需求调研, 界面设计, 数据库设计, 功能开发, 开发文档.<br />
+                        <td>
+                            1.系统中部分功能的需求调研, 界面设计, 数据库设计, 功能开发, 开发文档.<br />
                             2.解决工作中同事们无法解决的技术难题, 并不断选寻求更优化, 更简洁的解决方案.
                             <br />
                             3.编写或制作基类, 基础控件, 和页面模板, 方便其他同事进行程序开发.<br />
@@ -444,20 +483,21 @@
         <h3>自我评价:</h3>
         <div class="resume-body-block">
             <div style="padding-left: 50px; padding-right: 50px;">
-                <span>从熟悉的硬件业转行至软件业并直到现在,始终保持着对软件开发的热情,不断的研究并学习新技术,更新并改良自己对软件行业的认识.<br />
+                <span>
+                    从熟悉的硬件业转行至软件业并直到现在,始终保持着对软件开发的热情,不断的研究并学习新技术,更新并改良自己对软件行业的认识.<br />
                     不断完善自己在软件开发方面能力,而这种完善又不仅仅限于开发.<br />
                     <br />
                     整个软件开发的过程中,并不拘泥于特定的语言.<br />
                     我的长项是Java,绝大部分我接触的项目都是用Java开发的.<br />
                     但是也利用C#独立设计并完成了一个项目,而且充分利用了C#相较于Java的一些优点长处并运用在项目上.<br />
                     也了解过C++, Python, 知道他们之间的各自的强项并在合适的时候运用他们
-                <br />
+                    <br />
                     <br />
                     对于数据结构这样的基础知识,有比较牢固的掌握.<br />
                     <br />
                     通过多年的学习和经验的积累,拥有了更好的框架设计能力.<br />
                     合适的选用项目开发需要工具和项目管理工具,使开发事半功倍
-                <br />
+                    <br />
                     <br />
                     在日常的维护中,也充分的锻炼了人际沟通和寻找问题能力.<br />
                     流利运用英文或中文与用户进行沟通,之后立刻就有清晰的找出问题的思路.<br />
@@ -466,64 +506,76 @@
                     维护的过程中也掌握了许多Unix和Windows Server的相关知识.<br />
                     <br />
                     对新的知识,新的技术,永远保持着最大的热情, 并不会因为对现有技术的充分掌握就拒绝接受新技术.
-                <br />
+                    <br />
                     <br />
                     附上我对自己所掌握的技能的打分(满分10分)
-                <br />
+                    <br />
                 </span>
                 <ul class="resume-score">
-
                     <li>
-                        <div style="width: 270px;">Java</div>
-                        &nbsp;9</li>
+                        <div style="width: 240px;">Java</div>
+                        &nbsp;8
+                    </li>
                     <li>
-                        <div style="width: 240px;">Trouble Shoot</div>
-                        &nbsp;8</li>
+                        <div style="width: 240px;">Trouble Shooting</div>
+                        &nbsp;8
+                    </li>
                     <li>
-                        <div style="width: 240px;">Communication</div>
-                        &nbsp;8</li>
+                        <div style="width: 210px;">Communication</div>
+                        &nbsp;7
+                    </li>
                     <li>
-                        <div style="width: 220px;">Database</div>
-                        &nbsp;7</li>
+                        <div style="width: 210px;">Database</div>
+                        &nbsp;7
+                    </li>
                     <li>
-                        <div style="width: 220px;">Team Work</div>
-                        &nbsp;7</li>
+                        <div style="width: 210px;">Team Work</div>
+                        &nbsp;7
+                    </li>
                     <li>
-                        <div style="width: 220px;">English</div>
-                        &nbsp;7</li>
-                    <li>
-                        <div style="width: 220px;">Web Service</div>
-                        &nbsp;7</li>
+                        <div style="width: 210px;">English</div>
+                        &nbsp;7
+                    </li>
                     <li>
                         <div style="width: 180px;">C#</div>
-                        &nbsp;6</li>
+                        &nbsp;6
+                    </li>
                     <li>
                         <div style="width: 180px;">Html/Css/JS</div>
-                        &nbsp;6</li>
+                        &nbsp;6
+                    </li>
                     <li>
                         <div style="width: 180px;">Git</div>
-                        &nbsp;6</li>
+                        &nbsp;6
+                    </li>
                     <li>
                         <div style="width: 180px;">Data Structure</div>
-                        &nbsp;6</li>
+                        &nbsp;6
+                    </li>
                     <li>
-                        <div style="width: 150px;">Unix</div>
-                        &nbsp;5</li>
+                        <div style="width: 120px;">Unix</div>
+                        &nbsp;4
+                    </li>
                     <li>
                         <div style="width: 120px;">Workflow</div>
-                        &nbsp;4</li>
+                        &nbsp;4
+                    </li>
                     <li>
                         <div style="width: 90px;">Flex</div>
-                        &nbsp;3</li>
+                        &nbsp;3
+                    </li>
                     <li>
                         <div style="width: 90px;">Network</div>
-                        &nbsp;3</li>
+                        &nbsp;3
+                    </li>
                     <li>
                         <div style="width: 90px;">Algorithm</div>
-                        &nbsp;3</li>
+                        &nbsp;3
+                    </li>
                     <li>
                         <div style="width: 60px;">Python</div>
-                        &nbsp;2</li>
+                        &nbsp;2
+                    </li>
                 </ul>
             </div>
         </div>

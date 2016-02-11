@@ -121,6 +121,6 @@
     <value>Log in fail</value>
   </data>
   <data name="Validation_Required" xml:space="preserve">
-    <value>{0} is required</value>
+    <value>{0} 是必需的</value>
   </data>
 </root>

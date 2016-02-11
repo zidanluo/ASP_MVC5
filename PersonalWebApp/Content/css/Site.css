@@ -1,0 +1,101 @@
+﻿body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+.field-validation-error {
+    color: #a94442;
+    margin-left: 0.7em;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #a94442 !important;
+    background-color: #fdf7f7;
+}
+
+.validation-summary-errors, .summary-error {
+    border-left: 3px solid #d9534f;
+    background: #fdf7f7;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.summary-success {
+    border-left: 3px solid #009900;
+    background: #F2F9EF;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.validation-summary-errors ul {
+    margin: 0.75em 1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.table-appdetail {
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .table-appdetail td {
+        width: 40%;
+        padding-left: 0%;
+        padding-right: 7%;
+    }
+
+
+.flow-diagram {
+    margin: 0 auto;
+    margin-bottom: 120px;
+    width: 500px;
+}
+
+
+    .flow-diagram div {
+        float: left;
+    }
+
+    .flow-diagram ul {
+        list-style: none;
+        text-align: center;
+        width: 100px;
+    }
+
+    .flow-diagram li > span {
+        font-size: 20px;
+    }
+
+        .flow-diagram li > span.success {
+            color: #5cb85c;
+        }
+
+        .flow-diagram li > span.unsuccess {
+            opacity: 0.2;
+        }

@@ -10,30 +10,23 @@ namespace PersonalWebApp
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Content/js/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Content/js/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Content/js/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Content/js/bootstrap.js",
+                      "~/Content/js/respond.js"));
 
-            //bundles.Add(new StyleBundle("~/Content/css").Include(
-            //          "~/Content/bootstrap.css",
-            //          "~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/bundled.css")
-                   //.Include("~/Content/bootstrap.css")
-                   .Include("~/Content/components/pure/pure-min.css", new CssRewriteUrlTransformWrapper())
-                   .Include("~/Content/components/font-awesome/css/font-awesome.min.css", new CssRewriteUrlTransformWrapper())
-                   .Include("~/Content/components/highlight/src/styles/github.css")
-                   .Include("~/Content/fonts.css", "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/css/bootstrap.css",
+                      "~/Content/css/site.css"));
         }
     }
 }

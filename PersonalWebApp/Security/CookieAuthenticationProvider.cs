@@ -20,6 +20,8 @@ namespace PersonalWebApp.Security
             HttpContext.Current.GetOwinContext().Authentication.SignIn(identity);
             if (!string.IsNullOrEmpty(returnUrl))
                 HttpContext.Current.Response.Redirect(returnUrl, false);
+            else
+                HttpContext.Current.Response.Redirect("/Home", false);
         }
 
         public override void SignOut()

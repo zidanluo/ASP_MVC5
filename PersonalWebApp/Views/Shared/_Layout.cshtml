@@ -3,51 +3,88 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/bundled.css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body class="@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() @HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()">
-    @*<div class="navbar navbar-inverse navbar-fixed-top">*@
-    <div class="main">
-        <div class="header">
-        @*<div class="container">*@
-            <div class="navigation pure-menu pure-menu-open pure-menu-horizontal">
-            @*<div class="navbar-header">*@
-                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>*@
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "pure-menu-heading" })
-
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li><a class="navbar-link" href=@Url.Action("LogOff", "Home")>Log Off</a></li>
-                    }
-                    else
-                    {
-                        <li><a class="navbar-link" href=@Url.Action("LogOn", "Home")>Log On</a></li>
-                    }
-                </ul>
-            </div>
-        </div>
-        <div class="content">
-            @RenderBody()
-            @*<hr />*@
-            @*<footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>*@
-        </div>
-    </div>
-
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/Content/images/brand.png" type="image/png">
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+
+<body class="@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() @HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()">
+
+    <div class="navbar">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                        <img alt="Brand" src="~/Content/images/brand.png">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                        <li>@Html.ActionLink("个人简历", "Resume", "Home")</li>
+                        <li>@Html.ActionLink("联系我", "Contact", "Home")</li>
+                    </ul>
+
+                    <form class="navbar-form navbar-right" role="search">
+                        @if (Request.IsAuthenticated)
+                        {
+                            <a class="btn btn-success" href=@Url.Action("LogOff", "Home")>注销</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-success" href=@Url.Action("LogOn", "Home")>登录</a>
+                        }
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    @*<div class="container body-content">*@
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+    @*<div class="main">
+            <div class="header">
+                <div class="navigation pure-menu pure-menu-open pure-menu-horizontal">
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "pure-menu-heading" })
+
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                        <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li><a class="navbar-link" href=@Url.Action("LogOff", "Home")>Log Off</a></li>
+                        }
+                        else
+                        {
+                            <li><a class="navbar-link" href=@Url.Action("LogOn", "Home")>Log On</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div>*@
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
