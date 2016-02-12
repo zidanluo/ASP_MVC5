@@ -5,19 +5,21 @@
 
 @using (Html.BeginForm("ViewResume", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    <h2>个人简历</h2>
-    <hr />
-    @Html.ValidationSummary(false, "访问拒绝")
+    <div class="container body-content">
+        <h2>个人简历</h2>
+        <hr />
+        @Html.ValidationSummary(false, "访问拒绝")
 
-    <div class="form-horizontal">
+        <div class="form-horizontal">
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.AccessCode, new { @class = "col-md-2 control-label" })
-            <div class="col-md-2">
-                @Html.TextBoxFor(m => m.AccessCode, new { @class = "form-control col-md-2" })
-                @Html.ValidationMessageFor(model => model.AccessCode, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.AccessCode, new { @class = "col-md-2 control-label" })
+                <div class="col-md-2">
+                    @Html.TextBoxFor(m => m.AccessCode, new { @class = "form-control col-md-2" })
+                    @Html.ValidationMessageFor(model => model.AccessCode, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-success">查看</button>
             </div>
-            <button type="submit" class="btn btn-success">查看</button>
         </div>
     </div>
 

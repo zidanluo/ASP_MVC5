@@ -5,29 +5,31 @@
 
 @using (Html.BeginForm("LogOn", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    <h1>Sign In</h1>
-    <hr />
-    @Html.ValidationSummary(false, "Log In Falied")
+    <div class="container body-content">
+        <h1>Sign In</h1>
+        <hr />
+        @Html.ValidationSummary(false, "Log In Falied")
 
-    <div class="form-horizontal">
-        <fieldset>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
-                <div class="col-md-3">
-                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Username)
+        <div class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Username)
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                <div class="col-md-3">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Password)
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-3">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
                 </div>
-            </div>
-        </fieldset>
+            </fieldset>
             <button type="submit" class="btn btn-success col-md-offset-2">Sign In</button>
-        
+
+        </div>
     </div>
 }
 

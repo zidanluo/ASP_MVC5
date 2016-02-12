@@ -41,9 +41,9 @@ namespace PersonalWebApp.Security
                 Provider = new Microsoft.Owin.Security.Cookies.CookieAuthenticationProvider
                 {
                     OnApplyRedirect = x => x.Response.Redirect(x.RedirectUri),
-                    OnResponseSignIn = x => log.Info("OnResponseSignIn" + x),
-                    OnResponseSignedIn = x => log.Info("OnResponseSignedIn" + x),
-                    OnResponseSignOut = x => log.Info("OnResponseSignOut" + x),
+                    //OnResponseSignIn = x => log.Info("OnResponseSignIn" + x),
+                    //OnResponseSignedIn = x => log.Info("OnResponseSignedIn" + x),
+                    //OnResponseSignOut = x => log.Info("OnResponseSignOut" + x),
                 }
             });
         }

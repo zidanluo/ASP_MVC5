@@ -2,6 +2,6 @@
     ViewBag.Title = "Resume";
 }
 
-<div id="resume_content">
+<div id="resume_content" class="container body-content">
     @Html.Raw(File.ReadAllText(Server.MapPath("~/Views/Home/Resume.html")))
 </div>

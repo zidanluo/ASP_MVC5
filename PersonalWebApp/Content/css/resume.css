@@ -1,0 +1,144 @@
+﻿bold {
+        font-weight: bold;
+    }
+
+    div.resume {
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        position: relative;
+    }
+
+    div.resume-block {
+        background: #fff;
+        margin-bottom: 15px;
+        border: 1px solid #d9d9d9;
+    }
+
+    div.resume-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+        div.resume-body div.resume-body-block {
+        }
+
+
+    div.resume-header div {
+        float: left;
+        height: 150px;
+    }
+
+    div.resume-experience {
+        margin-left: 50px;
+    }
+
+    div.resume-project {
+        margin-left: 50px;
+    }
+
+    img.icon {
+        height: 150px;
+        width: 150px;
+    }
+
+    ul.resume {
+        list-style: none;
+    }
+
+        ul.resume li {
+            margin-top: 5px;
+        }
+
+
+    .font-header {
+        font-family: Verdana;
+        font-size: 15px;
+        font-weight: bold;
+        color: #0000FF;
+    }
+
+    div.resume-header {
+        height: 152px;
+    }
+
+    table.resume-basic-info {
+        width: 800px;
+    }
+
+    table.resume-experience {
+        width: 750px;
+    }
+
+    div.resume td {
+        padding-bottom: 5px;
+        /*font-family: Verdana;*/
+        /*font-size: 14px;*/
+        vertical-align: top;
+    }
+
+    td.resume-detail-title {
+        font-weight: bold;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        border-top: 1px solid #d9d9d9;
+    }
+
+    progress {
+        background-color: #eee;
+        width: 200px;
+    }
+
+        progress::-webkit-progress-bar {
+            background-color: #d7ffd7;
+        }
+
+
+    ul.resume-score {
+        list-style: none;
+        margin-left: -40px;
+    }
+
+        ul.resume-score li {
+            margin-bottom: 10px;
+            height: 25px;
+        }
+
+            ul.resume-score li div {
+                vertical-align: central;
+                background-color: #6db33f;
+                height: inherit;
+                float: left;
+                padding-left: 10px;
+                border-radius: 2px;
+                border-left: 1px #ccc solid;
+                border-right: 1px #ccc solid;
+                border-top: 1px #aaa solid;
+            }
+
+    #resume_print {
+        border-top: none;
+        border-right:none;
+        border-bottom-right-radius:0px;
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+        border-bottom-left-radius:4px;
+    }
+
+    @media print {
+        ul.resume-score li div {
+            background-color: #6db33f !important;
+            border-radius: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-top: 0px;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .noprint {
+            display: none;
+        }
+    }

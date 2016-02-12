@@ -1,149 +1,4 @@
-﻿<style>
-    bold {
-        font-weight: bold;
-    }
-
-    div.resume {
-        margin-left: auto;
-        margin-right: auto;
-        width: 800px;
-        position: relative;
-    }
-
-    div.resume-block {
-        background: #fff;
-        margin-bottom: 15px;
-        border: 1px solid #d9d9d9;
-    }
-
-    div.resume-body {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-        div.resume-body div.resume-body-block {
-        }
-
-
-    div.resume-header div {
-        float: left;
-        height: 150px;
-    }
-
-    div.resume-experience {
-        margin-left: 50px;
-    }
-
-    div.resume-project {
-        margin-left: 50px;
-    }
-
-    img.icon {
-        height: 150px;
-        width: 150px;
-    }
-
-    ul.resume {
-        list-style: none;
-    }
-
-        ul.resume li {
-            margin-top: 5px;
-        }
-
-
-    .font-header {
-        font-family: Verdana;
-        font-size: 15px;
-        font-weight: bold;
-        color: #0000FF;
-    }
-
-    div.resume-header {
-        height: 152px;
-    }
-
-    table.resume-basic-info {
-        width: 800px;
-    }
-
-    table.resume-experience {
-        width: 750px;
-    }
-
-    div.resume td {
-        padding-bottom: 5px;
-        /*font-family: Verdana;*/
-        /*font-size: 14px;*/
-        vertical-align: top;
-    }
-
-    td.resume-detail-title {
-        font-weight: bold;
-    }
-
-    hr {
-        border: none;
-        height: 1px;
-        border-top: 1px solid #d9d9d9;
-    }
-
-    progress {
-        background-color: #eee;
-        width: 200px;
-    }
-
-        progress::-webkit-progress-bar {
-            background-color: #d7ffd7;
-        }
-
-
-    ul.resume-score {
-        list-style: none;
-        margin-left: -40px;
-    }
-
-        ul.resume-score li {
-            margin-bottom: 10px;
-            height: 25px;
-        }
-
-            ul.resume-score li div {
-                vertical-align: central;
-                background-color: #6db33f;
-                height: inherit;
-                float: left;
-                padding-left: 10px;
-                border-radius: 2px;
-                border-left: 1px #ccc solid;
-                border-right: 1px #ccc solid;
-                border-top: 1px #aaa solid;
-            }
-
-    #resume_print {
-        border-top: none;
-        border-right:none;
-        border-bottom-right-radius:0px;
-        border-top-left-radius:0px;
-        border-top-right-radius:0px;
-        border-bottom-left-radius:4px;
-    }
-
-    @media print {
-        ul.resume-score li div {
-            background-color: #6db33f !important;
-            border-radius: 0px;
-            border-left: 0px;
-            border-right: 0px;
-            border-top: 0px;
-            -webkit-print-color-adjust: exact;
-        }
-
-        .noprint {
-            display: none;
-        }
-    }
-</style>
+﻿<link href="/Content/css/resume.css" rel="stylesheet" />
 
 <div class="resume">
     <div class="resume-header resume-block">
@@ -158,9 +13,9 @@
                 <li><span class="font-header">职位: 高级软件工程师(Java)</span></li>
             </ul>
         </div>
-        
+
         <div style="float:right">
-            <span id="resume_print" class="btn btn-default noprint" onclick="javascript:window.print();">            
+            <span id="resume_print" class="btn btn-default noprint" onclick="javascript:window.print();">
                 <span class="glyphicon glyphicon-print "></span>
                 打印简历
             </span>
@@ -484,20 +339,19 @@
         <div class="resume-body-block">
             <div style="padding-left: 50px; padding-right: 50px;">
                 <span>
+                    <br />
                     从熟悉的硬件业转行至软件业并直到现在,始终保持着对软件开发的热情,不断的研究并学习新技术,更新并改良自己对软件行业的认识.<br />
                     不断完善自己在软件开发方面能力,而这种完善又不仅仅限于开发.<br />
                     <br />
                     整个软件开发的过程中,并不拘泥于特定的语言.<br />
                     我的长项是Java,绝大部分我接触的项目都是用Java开发的.<br />
                     但是也利用C#独立设计并完成了一个项目,而且充分利用了C#相较于Java的一些优点长处并运用在项目上.<br />
-                    也了解过C++, Python, 知道他们之间的各自的强项并在合适的时候运用他们
-                    <br />
+                    也了解过C++, Python, 知道他们之间的各自的强项并在合适的时候运用他们<br />
                     <br />
                     对于数据结构这样的基础知识,有比较牢固的掌握.<br />
                     <br />
                     通过多年的学习和经验的积累,拥有了更好的框架设计能力.<br />
-                    合适的选用项目开发需要工具和项目管理工具,使开发事半功倍
-                    <br />
+                    合适的选用项目开发需要工具和项目管理工具,使开发事半功倍<br />
                     <br />
                     在日常的维护中,也充分的锻炼了人际沟通和寻找问题能力.<br />
                     流利运用英文或中文与用户进行沟通,之后立刻就有清晰的找出问题的思路.<br />
@@ -505,8 +359,7 @@
                     在进行项目维护的时候,并不会为了追求眼前的效率而采取头痛医头,脚痛医脚的策略,总是会着眼于全局而选择最优化的策略.<br />
                     维护的过程中也掌握了许多Unix和Windows Server的相关知识.<br />
                     <br />
-                    对新的知识,新的技术,永远保持着最大的热情, 并不会因为对现有技术的充分掌握就拒绝接受新技术.
-                    <br />
+                    对新的知识,新的技术,永远保持着最大的热情, 并不会因为对现有技术的充分掌握就拒绝接受新技术.<br />
                     <br />
                     附上我对自己所掌握的技能的打分(满分10分)
                     <br />
@@ -579,6 +432,13 @@
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div style="margin-left:auto;margin-right:auto;width:3px;">
+        <span class="btn btn-primary noprint" onclick="javascript:window.print();">
+            <span class="glyphicon glyphicon-print "></span>
+            打印简历
+        </span>
     </div>
 </div>
 

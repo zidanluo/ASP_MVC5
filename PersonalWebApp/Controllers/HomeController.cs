@@ -35,11 +35,11 @@ namespace PersonalWebApp.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            // "Your application description page.";
-            return View();
-        }
+        //public ActionResult About()
+        //{
+        //    // "Your application description page.";
+        //    return View();
+        //}
 
         public ActionResult Contact()
         {
@@ -48,6 +48,9 @@ namespace PersonalWebApp.Controllers
 
         public ActionResult Resume()
         {
+            HttpCookie c = Request.Cookies.Get("ResumeAccess");
+            if (c != null && "Y" == c.Value)
+                return View("ViewResume");
             return View();
         }
 
@@ -57,7 +60,13 @@ namespace PersonalWebApp.Controllers
             if (ModelState.IsValid)
             {
                 if (SecurityValidator.Validate(model.AccessCode))
+                {
+                    HttpCookie c = new HttpCookie("ResumeAccess", "Y");
+                    int days_access = 7;//TODO :config this in web.config later
+                    c.Expires = DateTime.Now.AddDays(days_access);
+                    Response.SetCookie(c);
                     return View();
+                }
                 else
                     ModelState.AddModelError("", "访问码错误");
             }
