@@ -58,6 +58,13 @@
         color: #0000FF;
     }
 
+    .font-tag {
+        font-family: Verdana;
+        font-size: 15px;
+        font-weight: bold;
+        color: #FF0000;
+    }
+
     div.resume-header {
         height: 152px;
     }
