@@ -22,6 +22,18 @@ namespace PersonalWebApp.Tests.Controllers
         public void GeneralTest()
         {
             log4net.Config.XmlConfigurator.Configure();
+            try
+            {
+                string start = "160305_100000";
+                string end = "160305_230000";
+                DateTime starttime = DateTime.ParseExact(start, "yyMMdd_HHmmss", System.Globalization.CultureInfo.CurrentCulture);
+                DateTime endtime = DateTime.ParseExact(end, "yyMMdd_HHmmss", System.Globalization.CultureInfo.CurrentCulture);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
         }
 
         public static void Main()

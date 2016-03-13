@@ -189,8 +189,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\LogFilterAttribute.cs" />
     <Compile Include="Attributes\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\Api\ReadImgController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Api\UploadController.cs" />
     <Compile Include="Data\AccessCode.cs" />
+    <Compile Include="Data\RoomImage.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\WebAppDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -277,7 +280,7 @@
     <Content Include="Views\Home\ViewResume.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Img\" />
     <Folder Include="Controllers\Account\" />
   </ItemGroup>
   <ItemGroup>
@@ -304,7 +307,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1231</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
