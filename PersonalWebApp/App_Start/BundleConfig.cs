@@ -25,7 +25,7 @@ namespace PersonalWebApp
                       "~/Content/js/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/css/bootstrap.css",
+                      //"~/Content/css/bootstrap.css",
                       "~/Content/css/site.css"));
 
         }

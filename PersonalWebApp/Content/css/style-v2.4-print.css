@@ -48,6 +48,7 @@ a:hover { text-decoration: underline; }
 .only-for-print { display: block; }
 .not-for-print { display: none; }
 .noprint { display: none;}
+.navbar{ display: none;}
 
 /* 页头 */
 .header { border-bottom: 1px solid #d6d6d6; line-height: 1; padding-bottom: 15px; }

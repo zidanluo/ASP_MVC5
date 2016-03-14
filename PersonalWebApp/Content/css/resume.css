@@ -10,3 +10,9 @@
 .center {
 	text-align:center;
 }
+
+.printer{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+}
